@@ -6,7 +6,6 @@
 </pre>
 
 ## Lightweight PDF password cracker (bruteforce).
-## DISCLAIMER: USE FOR LEGAL INTENTS ONLY. YOU ARE SOLELY RESPONSIBLE FOR ANY MISUSE / ILLEGAL PURPOSE.
 
 ### REQUIREMENTS
 - __PYTHON 3__
@@ -36,9 +35,4 @@ __You can find a `requirements.txt` file in this repository.__
 
 # ENJOY
 
-
-
-
-
-
-
+## DISCLAIMER: USE FOR LEGAL INTENTS ONLY. YOU ARE SOLELY RESPONSIBLE FOR ANY MISUSE / ILLEGAL INTENT.
