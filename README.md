@@ -31,7 +31,7 @@ __You can find a `requirements.txt` file in this repository.__
 #### [-h/--help] - HELP
 > Display help.
 
-![PDForce](/misc/screeshot.png)
+![PDForce](/misc/screenshot.png)
 
 # ENJOY
 
