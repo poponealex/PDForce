@@ -5,7 +5,7 @@
 |___|  |_____/|___|    |_____|__| |____|_____|
 </pre>
 
-## Lightweight PDF password cracker.
+## Lightweight PDF password cracker (bruteforce).
 ## DISCLAIMER: USE FOR LEGAL INTENTS ONLY. YOU ARE SOLELY RESPONSIBLE FOR ANY MISUSE / ILLEGAL PURPOSE.
 
 ### REQUIREMENTS
