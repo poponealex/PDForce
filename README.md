@@ -10,9 +10,8 @@
 ### REQUIREMENTS
 - __PYTHON 3__
 
-__You can find a `requirements.txt` file in this repository.__
-
-> __`pip install -r requirements.txt`__
+__`pip install -r requirements.txt`__
+> __You can find a `requirements.txt` file in this repository.__
 
 ### USAGE
 __`pdforce.py [-p <pdf>] [-w <wordlist>] [-e <encoding>] [-o <output>] [-c] [-v] [-h/--help]`__
