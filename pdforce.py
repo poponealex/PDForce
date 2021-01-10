@@ -144,12 +144,11 @@ def get_path(path="", prompt_title="PATH TO FILE", file_extension=""):
                 else return_valid_path(path, file_extension)
             )
             assert file_path
-            break
+            return file_path
         except Exception as e:
             path = ""
             print(f"{Color.FAIL}{e}{Color.END}")
             continue
-    return file_path
 
 
 def load_wordlist(wordlist_path, encoding=None):
