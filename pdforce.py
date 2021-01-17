@@ -71,7 +71,7 @@ def arguments():
         "-e",
         "--encoding",
         type=str,
-        help=f"{Color.INFORMATION}Specify an encoding for the wordlist (https://docs.python.org/3/library/codecs.html#standard-encodings). The default encoding is platform dependent. Use 'iso8859_2' for rockyou. {Color.END}",
+        help=f"{Color.INFORMATION}Specify an encoding for the wordlist (https://docs.python.org/3/library/codecs.html#standard-encodings). The default encoding is platform dependent. Use 'iso8859_1' for rockyou. {Color.END}",
         action="store",
         default=None,
     )

@@ -10,17 +10,18 @@
 ### REQUIREMENTS
 - __PYTHON 3__
 
-__`pip install -r requirements.txt`__
-> __You can find a `requirements.txt` file in this repository.__
+__You can find a `requirements.txt` file in this repository.__
+
+> `pip install -r requirements.txt`
 
 ### USAGE
-__`pdforce.py [-p <pdf>] [-w <wordlist>] [-e <encoding>] [-o <output>] [-c] [-v] [-h/--help]`__
+> `pdforce.py [-p <pdf>] [-w <wordlist>] [-e <encoding>] [-o <output>] [-c] [-v] [-h/--help]`
 #### [-p <pdf>] - PDF FILE
 > Path to the pdf file.
 #### [-w <wordlist>] - WORDLIST
 > Path to the wordlist.
 #### [-e <encoding>] - ENCODING
-> Specify an encoding for the wordlist (https://docs.python.org/3/library/codecs.html#standard-encodings). The default encoding is platform dependent. Use 'iso8859_2' for rockyou.
+> Specify an encoding for the wordlist (https://docs.python.org/3/library/codecs.html#standard-encodings). The default encoding is platform dependent. Use 'iso8859_1' for rockyou.
 #### [-o <output>] - OUTPUT
 > Output the cracked password to a new file.
 #### [-c] - COPY
@@ -30,7 +31,7 @@ __`pdforce.py [-p <pdf>] [-w <wordlist>] [-e <encoding>] [-o <output>] [-c] [-v]
 #### [-h/--help] - HELP
 > Display help.
 
-![PDForce](/misc/screenshot.png)
+![PDForce](/misc/screeshot.png)
 
 # ENJOY
 
