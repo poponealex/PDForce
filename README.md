@@ -30,7 +30,7 @@ __`pdforce.py [-p <pdf>] [-w <wordlist>] [-e <encoding>] [-o <output>] [-c] [-v]
 #### [-h/--help] - HELP
 > Display help.
 
-![PDForce](/misc/screeshot.png)
+![PDForce](/misc/screenshot.png)
 
 # ENJOY
 
