@@ -143,7 +143,6 @@ def get_path(path="", prompt_title="PATH TO FILE", file_extension=""):
                 if not path
                 else return_valid_path(path, file_extension)
             )
-            assert file_path
             return file_path
         except Exception as e:
             path = ""
@@ -190,30 +189,35 @@ def bruteforce_pdf(pdf_file_path, wordlist, verbose=False):
                     f"\n\n{Color.INFORMATION}Password is:{Color.END} {Color.EMPHASIS}{word}{Color.END}"
                     + ("", f"\n\n{Color.DETAIL}Found at index: {wordlist.index(word) + 1}\nTime elapsed: {(time.time() - start_time):.3f} secs{Color.END}")[verbose])
                     if word else print(f"\n{Color.EMPHASIS}The PDF file provided is not encrypted.{Color.END}"))
-                return word if word else None
+                return word
         except:
             sys.stdout.write(f"{Color.INFORMATION} Trying:{Color.END} {Color.FAIL}{word}{Color.END}\r") if verbose else sys.stdout.write(f"\r{Color.DETAIL}Searching...{Color.END}")
             continue
-    print(f"\n\n{Color.EMPHASIS}No password matched with the provided wordlist.{Color.END}")
+    return print(f"\n\n{Color.EMPHASIS}No password matched with the provided wordlist.{Color.END}")
 
 
 def run():
-    try:
-        args = arguments()
-        print(f"{Color.EMPHASIS}{TITLE}{Color.END}".center(500))
-        pdf_path = get_path(path=args.pdf, prompt_title="PATH TO PDF", file_extension="pdf")
-        print(f"{pdf_path}\n")
-        wordlist_path = get_path(path=args.wordlist, prompt_title="PATH TO WORDLIST")
-        print(wordlist_path)
-        wordlist = load_wordlist(wordlist_path, encoding=args.encoding)
-        print(f"\n{Color.DETAIL}Total wordcount: {len(wordlist)}{Color.END}") if args.verbose else ""
-        result = bruteforce_pdf(pdf_path, wordlist, args.verbose)
-        save_output(result, file_name=args.output) if args.output and result else ""
-        copy(result) if args.copy and result else ""
-    except Exception as e:
-        print(f"{Color.FAIL}<{e}> was raised!{Color.END}")
+    args = arguments()
+    print(f"{Color.EMPHASIS}{TITLE}{Color.END}".center(500))
+    pdf_path = get_path(path=args.pdf, prompt_title="PATH TO PDF", file_extension="pdf")
+    print(f"{pdf_path}\n")
+    wordlist_path = get_path(path=args.wordlist, prompt_title="PATH TO WORDLIST")
+    print(wordlist_path)
+    wordlist = load_wordlist(wordlist_path, encoding=args.encoding)
+    if args.verbose:
+        print(f"\n{Color.DETAIL}Total wordcount: {len(wordlist)}{Color.END}")
+    result = bruteforce_pdf(pdf_path, wordlist, args.verbose)
+    if result:
+        if args.output:
+            save_output(result, file_name=args.output)
+        if args.copy:
+            copy(result)
+    
 
 
 if __name__ == "__main__":
-    run()
+    try:
+        run()
+    except Exception as e:
+        print(f"{Color.FAIL}<{e}> was raised!{Color.END}")
     close()
