@@ -147,7 +147,6 @@ def get_path(path="", prompt_title="PATH TO FILE", file_extension=""):
         except Exception as e:
             path = ""
             print(f"{Color.FAIL}{e}{Color.END}")
-            continue
 
 
 def load_wordlist(wordlist_path, encoding=None):
@@ -181,18 +180,20 @@ def bruteforce_pdf(pdf_file_path, wordlist, verbose=False):
     Returns the password and displays it if found.
     """
 
-    start_time = time.time()
+    if verbose:
+        start_time = time.time()
+
     for word in [""] + wordlist:
         try:
             with Pdf.open(pdf_file_path, password=word):
-                (print(
-                    f"\n\n{Color.INFORMATION}Password is:{Color.END} {Color.EMPHASIS}{word}{Color.END}"
-                    + ("", f"\n\n{Color.DETAIL}Found at index: {wordlist.index(word) + 1}\nTime elapsed: {(time.time() - start_time):.3f} secs{Color.END}")[verbose])
-                    if word else print(f"\n{Color.EMPHASIS}The PDF file provided is not encrypted.{Color.END}"))
+                if not word:
+                    return print(f"\n{Color.EMPHASIS}The PDF file provided is not encrypted.{Color.END}")
+                print(f"\n\n{Color.INFORMATION}Password is:{Color.END} {Color.EMPHASIS}{word}{Color.END}")
+                if verbose:
+                    print(f"\n\n{Color.DETAIL}Found at index: {wordlist.index(word) + 1}\nTime elapsed: {(time.time() - start_time):.3f} secs{Color.END}")
                 return word
         except:
             sys.stdout.write(f"{Color.INFORMATION} Trying:{Color.END} {Color.FAIL}{word}{Color.END}\r") if verbose else sys.stdout.write(f"\r{Color.DETAIL}Searching...{Color.END}")
-            continue
     return print(f"\n\n{Color.EMPHASIS}No password matched with the provided wordlist.{Color.END}")
 
 
@@ -206,14 +207,13 @@ def run():
     wordlist = load_wordlist(wordlist_path, encoding=args.encoding)
     if args.verbose:
         print(f"\n{Color.DETAIL}Total wordcount: {len(wordlist)}{Color.END}")
-    result = bruteforce_pdf(pdf_path, wordlist, args.verbose)
+    result = bruteforce_pdf(pdf_path, wordlist, verbose=args.verbose)
     if result:
         if args.output:
             save_output(result, file_name=args.output)
         if args.copy:
             copy(result)
     
-
 
 if __name__ == "__main__":
     try:
