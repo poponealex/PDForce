@@ -27,7 +27,7 @@ class Color:
     END = "\033[0m"
 
 
-def close(signal="", frame=""):
+def close(signum="", frame=""):
     print(f"\n{Color.INFORMATION}BYE!{Color.END}")
     sys.exit(0)
 signal.signal(signal.SIGINT, close)
