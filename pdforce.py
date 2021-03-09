@@ -33,7 +33,7 @@ def close(signum="", frame=""):
 signal.signal(signal.SIGINT, close)
 
 
-def arguments():
+def cli_arguments():
     """CLI ARGUMENTS
 
     All arguments are optional.\n
@@ -198,7 +198,7 @@ def bruteforce_pdf(pdf_file_path, wordlist, verbose=False):
 
 
 def run():
-    args = arguments()
+    args = cli_arguments()
     print(f"{Color.EMPHASIS}{TITLE}{Color.END}".center(500))
     pdf_path = get_path(path=args.pdf, prompt_title="PATH TO PDF", file_extension="pdf")
     print(f"{pdf_path}\n")
