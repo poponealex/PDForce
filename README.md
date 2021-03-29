@@ -14,7 +14,7 @@ __`pip install -r requirements.txt`__
 > You can find a `requirements.txt` file in this repository.
 
 ### USAGE
-__`pdforce.py [-p <pdf>] [-w <wordlist>] [-e <encoding>] [-o <output>] [-c] [-v] [-h/--help]`__
+__`pdforce.py [-p <pdf>] [-w <wordlist>] [-e <encoding>] [-o <output>] [-c] [-h/--help]`__
 #### [-p <pdf>] - PDF FILE
 > Path to the pdf file.
 #### [-w <wordlist>] - WORDLIST
