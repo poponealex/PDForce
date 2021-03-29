@@ -8,7 +8,7 @@
 ## Lightweight PDF password cracker (bruteforce).
 
 ### REQUIREMENTS
-- __PYTHON 3__
+- __PYTHON 3.6+__
 
 __`pip install -r requirements.txt`__
 > You can find a `requirements.txt` file in this repository.
@@ -25,8 +25,6 @@ __`pdforce.py [-p <pdf>] [-w <wordlist>] [-e <encoding>] [-o <output>] [-c] [-v]
 > Output the cracked password to a new file.
 #### [-c] - COPY
 > Copy the password to the clipboard.
-#### [-v] - VERBOSE
-> Display additional information.
 #### [-h/--help] - HELP
 > Display help.
 
