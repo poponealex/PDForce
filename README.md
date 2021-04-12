@@ -8,7 +8,7 @@
 ## Lightweight PDF password cracker (bruteforce).
 
 ### REQUIREMENTS
-- __PYTHON 3.6+__
+- __PYTHON 3.8+__
 
 __`pip install -r requirements.txt`__
 > You can find a `requirements.txt` file in this repository.
