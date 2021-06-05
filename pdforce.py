@@ -141,7 +141,7 @@ def bruteforce_pdf(pdf_file_path: Path, wordlist: list) -> Union[str, None]:
                 print(f"{Color.DETAIL}Time elapsed: {(time.time() - start_time):.3f} secs{Color.END}")
                 return word
         except:
-            sys.stdout.write(f"{Color.INFORMATION} Trying: {Color.FAIL}{word}{Color.END}\r")
+            print(f"{Color.INFORMATION} Trying: {Color.FAIL}{word}{Color.END}", end="\r")
     return print(f"\n\n{Color.EMPHASIS}No password matched from the provided wordlist.{Color.END}")
 
 
