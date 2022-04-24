@@ -146,6 +146,7 @@ def bruteforce_pdf(pdf_file_path: Path, wordlist: list) -> Union[str, None]:
 
 
 def run():
+    os.system("color")
     args = cli_arguments()
     print(f"{Color.EMPHASIS}{TITLE}{Color.END}".center(500))
     pdf_path = get_valid_path(file_path=Path(args.pdf), prompt_title="PATH TO PDF")
